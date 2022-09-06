@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int towers(int n,char A,char B,char C)
+{
+    if(n==1)
+    {
+        printf("Moving ring 1 from %c to %c\n",A,B);
+    return 0;
+    }else{
+        towers(n-1,A,C,B);
+            printf("Moving ring %d from %c to %c\n",n,A,B);
+        towers(n-1,C,B,A);
+        return 0;
+    }
+}
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    towers(n,'A','B','C');
+    return 0;
+}
